@@ -1,0 +1,62 @@
+@import url(./vendor/normalize.css);
+@import url(./blocks/page/page.css);
+@import url(./vendor//fonts/fonts.css);
+@import url(./blocks/content/content.css);
+
+/* Блок header */
+
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+
+/* Блок profile */
+
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__avatar/profile__avatar.css);
+@import url(./blocks/profile/__info/profile__info.css);
+@import url(./blocks/profile/__about/profile__about.css);
+@import url(./blocks/profile/__name/profile__name.css);
+@import url(./blocks/profile/__edit-button/profile__edit-button.css);
+@import url(./blocks/profile/__place-button/profile__place-button.css);
+@import url(./blocks/profile/__overlay/profile__overlay.css);
+
+/* Блок Element */
+
+@import url(./blocks/element/element.css);
+@import url(./blocks/element/__place-name/element__place-name.css);
+@import url(./blocks/element/__like/element__like.css);
+@import url(./blocks/element/__like/__like-button/element__like-button.css);
+@import url(./blocks/element/__like/__like-counter/element__like-counter.css);
+@import url(./blocks/element/__like/__like-button/_active/element__like-button_active.css);
+@import url(./blocks/element/__mask-group/element__mask-group.css);
+@import url(./blocks/element/element-list/element-list.css);
+@import url(.//blocks/element/__group/element__group.css);
+@import url(./blocks/element/__btn-remove/element__btn-remove.css);
+
+/* Блок footer */
+
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__copyright/footer__copyright.css);
+
+/* Блок Popup */
+
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/_opened/popup_opened.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/__button-close/popup__button-close.css);
+@import url(./blocks/popup/__container/_for_pic/popup__container_for_pic.css);
+@import url(./blocks/popup/__img/popup__img.css);
+@import url(./blocks/popup/_type/popup_type_pic.css);
+
+/* Блок Form */
+
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__input/_type/form__input_type_about.css);
+@import url(./blocks/form/__input/_type/form__input_type_name.css);
+@import url(./blocks/form/__bottom-submit/form__bottom-submit.css);
+@import url(./blocks/form/__title/form__title.css);
+@import url(./blocks/form/__group/form__group.css);
+@import url(./blocks/form/__input-error/form__input-error_active.css);
+@import url(./blocks/form/__input/_type/form__input_type_error.css);
+@import url(./blocks/form/__bottom-submit/_status/form__bottom-submit_status_inactive.css);
+@import url(./blocks/form/__error-message/form__error-message.css);
