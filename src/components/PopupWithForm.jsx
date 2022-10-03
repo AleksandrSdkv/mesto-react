@@ -1,5 +1,5 @@
 export default function PopupWithForm(props) {
-    const { name, title, isOpen, textBtn, onClose } = props
+    const { name, title, isOpen, textBtn, onClose, onSubmit } = props
 
     return (
         <div className={`popup popup_type_${name} ${isOpen}`} >
@@ -10,7 +10,7 @@ export default function PopupWithForm(props) {
                     <h2 className="form__title">{title}</h2>
                     <fieldset className="form__group">
                         {props.children}
-                        <button className="form__bottom-submit" type="submit">{textBtn}</button>
+                        <button className="form__bottom-submit" type="submit" onClick={onSubmit}>{textBtn}</button>
                     </fieldset>
                 </form>
             </div>

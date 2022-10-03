@@ -55,18 +55,21 @@ class Api {
             method: 'DELETE',
         }).then(this._getResponseData)
     }
-    setLike(cardID) {
-        return fetch(`https://mesto.nomoreparties.co/v1/cohort-48/cards/${cardID}/likes`, {
-            headers: this._headers,
-            method: 'PUT',
-        }).then(this._getResponseData)
-    }
 
-    removeLike(cardID) {
-        return fetch(`https://mesto.nomoreparties.co/v1/cohort-48/cards/${cardID}/likes`, {
-            headers: this._headers,
-            method: 'DELETE',
-        }).then(this._getResponseData)
+    changeLikeCardStatus(cardID, isLiked) {
+        if (isLiked) {
+            return fetch(`https://mesto.nomoreparties.co/v1/cohort-48/cards/${cardID}/likes`, {
+                    headers: this._headers,
+                    method: 'PUT',
+                })
+                .then(this._getResponseData)
+        } else {
+            return fetch(`https://mesto.nomoreparties.co/v1/cohort-48/cards/${cardID}/likes`, {
+                    headers: this._headers,
+                    method: 'DELETE',
+                })
+                .then(this._getResponseData)
+        }
     }
 }
 const apiConfig = {

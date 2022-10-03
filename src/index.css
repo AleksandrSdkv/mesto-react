@@ -31,6 +31,7 @@
 @import url(./blocks/element/element-list/element-list.css);
 @import url(.//blocks/element/__group/element__group.css);
 @import url(./blocks/element/__btn-remove/element__btn-remove.css);
+@import url(./blocks/element/__btn-remove/element__btn-remove_visible.css);
 
 /* Блок footer */
 
