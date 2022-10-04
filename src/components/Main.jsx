@@ -1,12 +1,12 @@
 
-import React from 'react';
+import { useContext } from 'react';
 import overlayAvatar from '../image/VectorAvatar.svg';
 import Card from './Card';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 
 export default function Main(props) {
-    const currentUserContext = React.useContext(CurrentUserContext);
+    const currentUserContext = useContext(CurrentUserContext);
     const { onEditAvatar, onEditProfile, onAddPlace, onCardClick, onCardDelete, onCardLike, cards, onTrashClick } = props
 
     return (
@@ -16,7 +16,7 @@ export default function Main(props) {
                 <div className="profile__overlay" onClick={onEditAvatar}>
                     <img src={overlayAvatar} className="profile__avatar-eddit" alt="Карандашик" />
                 </div>
-                <img className="profile__avatar" style={{ backgroundImage: `url(${currentUserContext.avatar})` }} alt="Аватар" />
+                <img className="profile__avatar" src={currentUserContext.avatar} alt="Аватар" />
 
                 <div className="profile__info">
                     <h1 className="profile__name">{currentUserContext.name}</h1>

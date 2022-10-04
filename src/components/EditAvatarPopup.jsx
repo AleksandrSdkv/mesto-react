@@ -1,11 +1,11 @@
-import React from "react";
+import { useContext, useRef, useEffect } from 'react';
 import PopupWithForm from './PopupWithForm';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 export default function EditAvatarPopup(props) {
     const { isOpen, onClose, onUpdateAvatar } = props
-    const currentUser = React.useContext(CurrentUserContext);
+    const currentUser = useContext(CurrentUserContext);
 
-    const avatarRef = React.useRef(currentUser.avatar);
+    const avatarRef = useRef(currentUser.avatar);
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -14,7 +14,7 @@ export default function EditAvatarPopup(props) {
             avatar: avatarRef.current.value,
         });
     }
-    React.useEffect(() => {
+    useEffect(() => {
         avatarRef.current.value = ''
     }, [isOpen]);
     return (

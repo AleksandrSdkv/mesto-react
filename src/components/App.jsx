@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
@@ -11,16 +11,16 @@ import { api } from '../utils/Api';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function App() {
-    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState('');
-    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState('');
-    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState('');
-    const [isCardPopupOpen, setisCardPopupOpen] = React.useState('');
-    const [isDeletedCardPopupOpen, setIsDeletedCardPopupOpen] = React.useState('');
-    const [selectedCard, setSelectedCard] = React.useState({ name: '', link: '' });
-    const [currentUser, setCurrentUser] = React.useState({ name: '', link: '' });
-    const [cards, setCards] = React.useState([]);
-    const [deleteCard, setDeleteCard] = React.useState();
-    React.useEffect(() => {
+    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState('');
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState('');
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState('');
+    const [isCardPopupOpen, setisCardPopupOpen] = useState('');
+    const [isDeletedCardPopupOpen, setIsDeletedCardPopupOpen] = useState('');
+    const [selectedCard, setSelectedCard] = useState({ name: '', link: '' });
+    const [currentUser, setCurrentUser] = useState({ name: '', link: '' });
+    const [cards, setCards] = useState([]);
+    const [deleteCard, setDeleteCard] = useState();
+    useEffect(() => {
         const initialPromises = Promise.all([
             api.getUserData(),
             api.getUserCards(),
@@ -37,9 +37,6 @@ function App() {
             });
     }, []);
 
-    React.useEffect(() => {
-
-    })
     function handleCardClick(card) {
         setisCardPopupOpen('popup_opened');
         setSelectedCard(card);
@@ -69,15 +66,16 @@ function App() {
         const isLiked = card.likes.some(i => i._id === currentUser._id);
         api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
             setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+        }).catch((err) => {
+            console.log(err);
         });
     }
 
 
-    function handleUpdateUser(dataS) {
-        api.setUserData(dataS)
+    function handleUpdateUser(dataState) {
+        api.setUserData(dataState)
             .then((data) => {
                 setCurrentUser(data);
-                console.log(dataS)
             })
             .catch((err) => {
                 console.log(err);
