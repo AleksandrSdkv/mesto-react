@@ -1,5 +1,5 @@
 # Проект: Место (Рефакторинг на React)
-### [Ссылка сайта](https://aleksandrsdkv.github.io/mesto-react/](https://mesto-react-ruddy.vercel.app/)
+### [Ссылка сайта](https://mesto-react-ruddy.vercel.app/)
 
 ## Сервис по обмену фотографиями
 Рефакторинг проекта Mesto на React.
