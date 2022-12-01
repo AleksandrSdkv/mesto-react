@@ -28,3 +28,6 @@ ___
 - git clone git@github.com:AleksandrSdkv/mesto.git
 
 - npm start
+
+###Планы по доработке проекта
+ *Подключение валидации форм
